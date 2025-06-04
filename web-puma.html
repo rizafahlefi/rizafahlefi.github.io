@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puma Official Store</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+      header img.logo {
+        height: 50px;
+        width: 10px;
+        margin-bottom: 10px;
+      }
+
+      header {
+        background: black;
+        color: #fff;
+        padding: 10px 0 10px 0;
+        text-align: center;
+        position: relative;
+        margin-bottom: 18px;
+      }
+      header img.logo {
+        width: 120px;
+        margin-bottom: 10px;
+        background: #fff;
+        padding: 8px 18px;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav {
+        margin: 15px 0 0 0;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 18px;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: #dc3545;
+      }
+      .banner {
+        background: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/377747/01/sv01/fnd/IND/fmt/png/Velocity-NITRO-3-Men's-Running-Shoes")
+          center/cover no-repeat;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-shadow: 2px 2px 8px #000;
+        flex-direction: column;
+      }
+      .banner h1 {
+        font-size: 2.8em;
+        margin: 0;
+      }
+      .banner p {
+        font-size: 1.3em;
+        margin: 15px 0 25px 0;
+      }
+      .banner .btn {
+        background: #dc3545;
+        color: #fff;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.1em;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .banner .btn:hover {
+        background: #c82333;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+      }
+      .section-title {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: #222;
+      }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+      }
+      .product-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        width: 260px;
+        padding: 18px;
+        text-align: center;
+        transition: transform 0.2s;
+      }
+      .product-card:hover {
+        transform: translateY(-7px) scale(1.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
+      }
+      .product-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 7px;
+      }
+      .product-card h3 {
+        margin: 15px 0 8px 0;
+        color: #222;
+      }
+      .product-card p {
+        color: #666;
+        font-size: 0.97em;
+        min-height: 48px;
+      }
+      .product-card .btn {
+        margin-top: 10px;
+        background: #dc3545;
+        color: #fff;
+        padding: 8px 22px;
+        border-radius: 20px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s;
+      }
+      .product-card .btn:hover {
+        background: #c82333;
+      }
+      .promo {
+        background: #dc3545;
+        color: #fff;
+        border-radius: 10px;
+        padding: 30px 20px;
+        text-align: center;
+        margin: 40px 0;
+      }
+      .promo h2 {
+        margin: 0 0 10px 0;
+      }
+      .promo .btn {
+        background: #fff;
+        color: #dc3545;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px 28px;
+        text-decoration: none;
+        margin-top: 10px;
+        display: inline-block;
+        transition: background 0.3s, color 0.3s;
+      }
+      .promo .btn:hover {
+        background: #c82333;
+        color: #fff;
+      }
+      .testimonials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+      .testimonial {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        width: 320px;
+        padding: 22px;
+        text-align: left;
+        font-style: italic;
+        position: relative;
+      }
+      .testimonial:before {
+        content: "“";
+        font-size: 2.5em;
+        color: #dc3545;
+        position: absolute;
+        left: 18px;
+        top: 10px;
+      }
+      .testimonial .user {
+        margin-top: 18px;
+        font-weight: bold;
+        color: #222;
+        font-style: normal;
+      }
+      .about {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px 25px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      }
+      .about h2 {
+        margin-top: 0;
+      }
+      .contact {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px 25px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        margin-bottom: 40px;
+      }
+      .contact label {
+        display: block;
+        margin-bottom: 7px;
+        color: #222;
+      }
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+      }
+      .contact button {
+        background: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 10px 28px;
+        border-radius: 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .contact button:hover {
+        background: #c82333;
+      }
+      footer {
+        background: #111;
+        color: #fff;
+        text-align: center;
+        padding: 18px 0;
+        font-size: 1em;
+      }
+      @media (max-width: 900px) {
+        .products,
+        .testimonials {
+          flex-direction: column;
+          align-items: center;
+        }
+        .container {
+          width: 98%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="data:image/png;base64,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"
+        alt="Puma Logo"
+        class="logo"
+      />
+      <nav>
+        <a href="#products">Produk</a>
+        <a href="#promo">Promo</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#about">Tentang Puma</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
+    <div class="banner">
+      <h1>PUMA OFFICIAL STORE</h1>
+      <p>
+        Temukan koleksi terbaru sepatu, pakaian, dan aksesoris Puma. Tampil
+        sporty & stylish setiap hari!
+      </p>
+      <a href="#products" class="btn">Lihat Produk</a>
+    </div>
+    <div class="container">
+      <div id="products">
+        <div class="section-title">Produk Unggulan</div>
+        <div class="products">
+          <div class="product-card">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Puma Running Shoes"
+            />
+            <h3>Puma Running Shoes</h3>
+            <p>Nyaman dan ringan untuk lari harian. Tersedia berbagai warna.</p>
+            <a
+              href="https://id.puma.com/id/en/pd/velocity-nitro-3-mens-running-shoes/377747.html"
+              class="btn"
+              target="_blank"
+              >Beli Sekarang</a
+            >
+          </div>
+          <div class="product-card">
+            <img
+              src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/586666/01/mod01/fnd/IND/fmt/png/Essentials-Men's-Tee"
+              alt="Puma T-Shirt"
+            />
+            <h3>Puma T-Shirt</h3>
+            <p>Kaos sporty, adem, dan cocok untuk aktivitas sehari-hari.</p>
+            <a
+              href="https://id.puma.com/id/en/pd/essentials-mens-tee/586666.html"
+              class="btn"
+              target="_blank"
+              >Beli Sekarang</a
+            >
+          </div>
+          <div class="product-card">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEhUQEhAQEBUXFhASEhAQFRAWFhAYFRIWFhUXFxUYHSggGBolHRUWITEhJSk3Li4uFx8zODMtNygtLisBCgoKDg0OFQ8QFSsdFRkrKy0tKysrKy0rLS0rKystKys3Kys3LTcrKy0rLS0rKy0rKy03LSstLSsrKystKysrN//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwEDBAYIBQL/xABFEAABAwIDAwgECwcEAwEAAAABAAIDBBEFEiEHMUEGEyJRYXGBoRQykbEjQlJicpKissHR8BUkM0RzgsJDU8PhF2PSCP/EABcBAQEBAQAAAAAAAAAAAAAAAAACAQP/xAAcEQEBAAMAAwEAAAAAAAAAAAAAAQIRMRIhQWH/2gAMAwEAAhEDEQA/AJsREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBEQm2qAi81uLNffI3M0Etzk2DiDY27AbjwK+/2g75I81mxnosD9oO+SPafyXxJiTmi5a32lNwekiwsMxNlQDl0LbZmneL3se42PsKzVoIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIrU1S1m869Q3oLq8Hlxi4o6OWY/Fa4267DQeJsPFZ765x9UW7StU5d4f6XSywuNy9pDSdcrhqw27HAKbk3TB2X4p6Vh7HE3ex8scneHlwJ72vafFbaFCuxXGvR6mahmPN85Ysa4gWljJa5veQfsKa5OjYEHXdYXWU0FeJjteGNOoAAJJPADeVmYhXNY0m500tldv9iiraTjDxG2IG3OF2bryttceJI9hCz8bpn7OeVrv2o4PNoqkCBgPxSwkwnxJcO+RTeud9j+Amoq/Sng83T9IHg6Vw6AH0Rd3flU8x1jhv196revTGeitR1DXbj4FXVTBERAREQEREBERAREQEREBERAREQEREGNX1GRum87l5kbevU77q5VyZ39m4dw/7XxHqT2WCi32qRcVirpxILFZCKRD+0XZ7LI41dKzO/fLE3fJb4zBxdbeOPDXfq/Jjl/W0D2tkklnhacr6eU3c0DQ5S7pNcNeje2m7iuh7LX+UXIugrznmgBfxkYXMeR1FzbZvFVKNI5ccrRBCGxWL5SXM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"
+              alt="Puma Jacket"
+            />
+            <h3>Puma Sports Jacket</h3>
+            <p>Jaket ringan, cocok untuk olahraga atau hangout.</p>
+            <a
+              href="https://id.puma.com/id/en/pd/essentials-mens-track-jacket/849313.html"
+              class="btn"
+              target="_blank"
+              >Beli Sekarang</a
+            >
+          </div>
+          <div class="product-card">
+            <img
+              src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/907959/01/fnd/IND/fmt/png/Performance-Unisex-Socks-3-pair"
+              alt="Puma Socks"
+            />
+            <h3>Puma Performance Socks</h3>
+            <p>Kaos kaki nyaman, anti-bau, dan menyerap keringat.</p>
+            <a
+              href="https://id.puma.com/id/en/pd/performance-unisex-socks-3-pair/907959.html"
+              class="btn"
+              target="_blank"
+              >Beli Sekarang</a
+            >
+          </div>
+          <div class="product-card">
+            <img
+              src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/079954/01/fnd/IND/fmt/png/Phase-Backpack"
+              alt="Puma Backpack"
+            />
+            <h3>Puma Backpack</h3>
+            <p>Tas punggung stylish, muat laptop & perlengkapan olahraga.</p>
+            <a
+              href="https://id.puma.com/id/en/pd/phase-backpack/079954.html"
+              class="btn"
+              target="_blank"
+              >Beli Sekarang</a
+            >
+          </div>
+          <div class="product-card">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Puma Cap"
+            />
+            <h3>Puma Training Cap</h3>
+            <p>Topi olahraga, ringan dan melindungi dari panas matahari.</p>
+            <a
+              href="https://id.puma.com/id/en/pd/training-unisex-cap/078931.html"
+              class="btn"
+              target="_blank"
+              >Beli Sekarang</a
+            >
+          </div>
+        </div>
+      </div>
+      <div id="promo" class="promo">
+        <h2>Promo Spesial Juni!</h2>
+        <p>
+          Dapatkan diskon hingga <b>40%</b> untuk produk pilihan. Gratis ongkir
+          untuk pembelian di atas Rp500.000!
+        </p>
+        <a href="#products" class="btn">Belanja Sekarang</a>
+      </div>
+      <div id="testimoni">
+        <div class="section-title">Testimoni Pelanggan</div>
+        <div class="testimonials">
+          <div class="testimonial">
+            Sepatunya nyaman banget buat jogging tiap pagi. Modelnya juga keren!
+            <div class="user">- Andi, Jakarta</div>
+          </div>
+          <div class="testimonial">
+            Kaos Puma adem dan nggak gampang bau walau dipakai seharian.
+            Recomended!
+            <div class="user">- Siti, Bandung</div>
+          </div>
+          <div class="testimonial">
+            Backpack-nya awet, muat banyak, dan desainnya kekinian. Suka banget!
+            <div class="user">- Rian, Surabaya</div>
+          </div>
+        </div>
+      </div>
+      <div id="about" class="about">
+        <h2>Tentang Puma</h2>
+        <p>
+          Puma adalah salah satu brand olahraga terbesar di dunia yang berdiri
+          sejak 1948 di Jerman. Puma dikenal dengan inovasi desain dan teknologi
+          pada produk sepatu, pakaian, dan aksesoris olahraga. Visi Puma adalah
+          menginspirasi dunia untuk bergerak maju dengan gaya dan performa
+          terbaik.
+        </p>
+      </div>
+      <div id="contact" class="contact">
+        <h2>Kontak Kami</h2>
+        <form>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="4" required></textarea>
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+    <footer>&copy; 2025 Puma Official Store. All rights reserved.</footer>
+  </body>
+</html>
